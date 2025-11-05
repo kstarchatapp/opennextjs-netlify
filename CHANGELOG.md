@@ -1,5 +1,84 @@
 # Changelog
 
+## [5.15.0](https://github.com/kstarchatapp/opennextjs-netlify/compare/v5.14.5...v5.15.0) (2025-11-05)
+
+
+### Features
+
+* cache 404s indefinitely for bot probes ([#2668](https://github.com/kstarchatapp/opennextjs-netlify/issues/2668)) ([60885d2](https://github.com/kstarchatapp/opennextjs-netlify/commit/60885d2725de5d1c465a4405fdf86f1808c8434c))
+* make CDN SWR background revalidation discard stale cache content in order to produce fresh responses ([#2765](https://github.com/kstarchatapp/opennextjs-netlify/issues/2765)) ([f8004d7](https://github.com/kstarchatapp/opennextjs-netlify/commit/f8004d76ba7bb669ffc17c744a0df8e132473979))
+* Node.js Middleware support ([#3018](https://github.com/kstarchatapp/opennextjs-netlify/issues/3018)) ([ddfe7f4](https://github.com/kstarchatapp/opennextjs-netlify/commit/ddfe7f40bc0f96bf8195e7e02818bafd20c0288f))
+* restore NETLIFY_NEXT_PLUGIN_SKIP ([#3017](https://github.com/kstarchatapp/opennextjs-netlify/issues/3017)) ([0b51c47](https://github.com/kstarchatapp/opennextjs-netlify/commit/0b51c4741ee82a230987122c222a14415f65dfd9))
+* skew protection ([#3147](https://github.com/kstarchatapp/opennextjs-netlify/issues/3147)) ([95be9b9](https://github.com/kstarchatapp/opennextjs-netlify/commit/95be9b99f7b889e39195c074b39a726981506ed0))
+* support 'use cache' ([#2862](https://github.com/kstarchatapp/opennextjs-netlify/issues/2862)) ([2810004](https://github.com/kstarchatapp/opennextjs-netlify/commit/2810004a2cbeeb738cbe7cf70f2b8bd2bbea6156))
+* support after() ([#2717](https://github.com/kstarchatapp/opennextjs-netlify/issues/2717)) ([51e5373](https://github.com/kstarchatapp/opennextjs-netlify/commit/51e5373e4914e9b76edf439e8de01c561742bdaa))
+* support revalidateTag with SWR behavior ([#3173](https://github.com/kstarchatapp/opennextjs-netlify/issues/3173)) ([d24f15e](https://github.com/kstarchatapp/opennextjs-netlify/commit/d24f15ee595be1d01f44504983b70b01f96bb1b1))
+
+
+### Bug Fixes
+
+* add a fallback for loadManifest import path ([#2881](https://github.com/kstarchatapp/opennextjs-netlify/issues/2881)) ([a9119d3](https://github.com/kstarchatapp/opennextjs-netlify/commit/a9119d3574e30dd61b22ab80f273f12ed7f2982f))
+* add Buffer shim if is not globally available, adjust process and AsyncLocalStorage shims to only be applied when not available ([#3222](https://github.com/kstarchatapp/opennextjs-netlify/issues/3222)) ([e536181](https://github.com/kstarchatapp/opennextjs-netlify/commit/e536181f1b8d5518216a33c1c9d5052efa537f0d))
+* add data request query param to the cache key ([#2701](https://github.com/kstarchatapp/opennextjs-netlify/issues/2701)) ([00e3a4b](https://github.com/kstarchatapp/opennextjs-netlify/commit/00e3a4be19bf8428ea6ce1ed2ae74a8ac8375532))
+* add debug information around potential html/rsc response mismatches ([#2816](https://github.com/kstarchatapp/opennextjs-netlify/issues/2816)) ([70f9b15](https://github.com/kstarchatapp/opennextjs-netlify/commit/70f9b152ace8ad36911c5018eac89c6336b5c5df))
+* add more measures to prevent using data-cache for blob operations ([#2775](https://github.com/kstarchatapp/opennextjs-netlify/issues/2775)) ([58cafc1](https://github.com/kstarchatapp/opennextjs-netlify/commit/58cafc152ec70539122b87e46578abd75dc9daa8))
+* address edge can read request body failures ([#2890](https://github.com/kstarchatapp/opennextjs-netlify/issues/2890)) ([5489c0d](https://github.com/kstarchatapp/opennextjs-netlify/commit/5489c0da29fb863ff2efb624b4dd128b5f37a8f0))
+* adjust cache-control handling for next@15.0.0-canary.187 ([#2666](https://github.com/kstarchatapp/opennextjs-netlify/issues/2666)) ([7e5253d](https://github.com/kstarchatapp/opennextjs-netlify/commit/7e5253dfa63f46b96abe8bf17df1602319445602))
+* adjust middleware json data rewrite to work with recent next@canary ([#2734](https://github.com/kstarchatapp/opennextjs-netlify/issues/2734)) ([5a602c3](https://github.com/kstarchatapp/opennextjs-netlify/commit/5a602c30af16a3d91272f03ebb53b3a49c57f728))
+* allow dot files in function bundle ([#3118](https://github.com/kstarchatapp/opennextjs-netlify/issues/3118)) ([8cd51b5](https://github.com/kstarchatapp/opennextjs-netlify/commit/8cd51b5633fee4629d12601aac59c637dafa7c9a))
+* apply caching headers to pages router 404 with getStaticProps ([#2764](https://github.com/kstarchatapp/opennextjs-netlify/issues/2764)) ([3301077](https://github.com/kstarchatapp/opennextjs-netlify/commit/3301077e8dd902241f79bb983ea7b73509e8d982))
+* bundle edge-runtime assets for turbopack builds ([a6063c9](https://github.com/kstarchatapp/opennextjs-netlify/commit/a6063c921de95ab6e48c7ea6cb3e513d2cb63577))
+* cookies set in middleware accessible during the same request ([#2847](https://github.com/kstarchatapp/opennextjs-netlify/issues/2847)) ([263853b](https://github.com/kstarchatapp/opennextjs-netlify/commit/263853b0b33492eda65e2a406351257418e7e6ef))
+* create cache entries for fallback pages to support next@canary ([#2649](https://github.com/kstarchatapp/opennextjs-netlify/issues/2649)) ([8ab259a](https://github.com/kstarchatapp/opennextjs-netlify/commit/8ab259a95cdb8712661ab9c1cbb65206b2f9d5ae))
+* don't 404 on prefetches to fully static pages router pages when middleware is present ([#2957](https://github.com/kstarchatapp/opennextjs-netlify/issues/2957)) ([7af10ec](https://github.com/kstarchatapp/opennextjs-netlify/commit/7af10ec939e7a0767739b12d48867b3e4789a3fa))
+* don't cache POST when serving embedded static html ([#2766](https://github.com/kstarchatapp/opennextjs-netlify/issues/2766)) ([28217d4](https://github.com/kstarchatapp/opennextjs-netlify/commit/28217d47b3fd7b3ec639f860fb03fd9137ab5128))
+* don't set permanent caching header when res.revalidate() was used ([#2810](https://github.com/kstarchatapp/opennextjs-netlify/issues/2810)) ([0e7e3a2](https://github.com/kstarchatapp/opennextjs-netlify/commit/0e7e3a265d253cc5ab7d03855e39bee6ebf21d47))
+* dynamic not-prerendered routes revalidate tracking for next@&gt;=v15.2.1-canary.4 ([b242927](https://github.com/kstarchatapp/opennextjs-netlify/commit/b242927cdc3a1f0df227889b333f3be7e921c73b))
+* **edge-runtime:** match path with URI-encoded chars ([#2873](https://github.com/kstarchatapp/opennextjs-netlify/issues/2873)) ([7fe6b3b](https://github.com/kstarchatapp/opennextjs-netlify/commit/7fe6b3b634322de47d06110e952a5b67bc8e1d1c))
+* ensure background work is finished when response has 3xx or 5xx status code ([#2742](https://github.com/kstarchatapp/opennextjs-netlify/issues/2742)) ([ff2632f](https://github.com/kstarchatapp/opennextjs-netlify/commit/ff2632f2d5e391a1f087baaa484174fe27507dd2))
+* ensure internal `x-middleware-set-cookie` header is not passed on to lambda ([#2891](https://github.com/kstarchatapp/opennextjs-netlify/issues/2891)) ([b3ab558](https://github.com/kstarchatapp/opennextjs-netlify/commit/b3ab558bf50ded49cb6dac1ff714926c2832413d))
+* exclude `musl` binaries from function bundle when building on Netlify with `pnpm` ([#3145](https://github.com/kstarchatapp/opennextjs-netlify/issues/3145)) ([d11382c](https://github.com/kstarchatapp/opennextjs-netlify/commit/d11382c06c6c2e6d3e8c40fe4cfd47dc9df00384))
+* exclude `musl` binaries from function bundle when building on Netlify with `pnpm` monorepos ([a6063c9](https://github.com/kstarchatapp/opennextjs-netlify/commit/a6063c921de95ab6e48c7ea6cb3e513d2cb63577))
+* fail build/deploy when using not yet unsupported Node.js Midleware ([#3016](https://github.com/kstarchatapp/opennextjs-netlify/issues/3016)) ([8c86b77](https://github.com/kstarchatapp/opennextjs-netlify/commit/8c86b77864f150f86e8d029bb9479df67356ce8b))
+* forcefully add _rsc query param to vary ([#2827](https://github.com/kstarchatapp/opennextjs-netlify/issues/2827)) ([af8bb84](https://github.com/kstarchatapp/opennextjs-netlify/commit/af8bb84f762ad1beccd76f9dbddff030eedf8d2a))
+* glob subdirectories in server/chunks to support turbopack builds ([#2987](https://github.com/kstarchatapp/opennextjs-netlify/issues/2987)) ([e7bf18f](https://github.com/kstarchatapp/opennextjs-netlify/commit/e7bf18fdb6e4d97189447cc6a7629e7cc5287bb0))
+* handle case of env not being defined for edge functions ([#2936](https://github.com/kstarchatapp/opennextjs-netlify/issues/2936)) ([ca1b7e8](https://github.com/kstarchatapp/opennextjs-netlify/commit/ca1b7e8f54e101bef76c1c3675b299ae90edac44))
+* handle case of zero-length cacheable route handler responses ([#2819](https://github.com/kstarchatapp/opennextjs-netlify/issues/2819)) ([530d2c5](https://github.com/kstarchatapp/opennextjs-netlify/commit/530d2c5bab7c2bda2f5157226e84d7ee050afb86))
+* handle edge runtime pages and middleware for turbopack builds ([#3009](https://github.com/kstarchatapp/opennextjs-netlify/issues/3009)) ([42eeab8](https://github.com/kstarchatapp/opennextjs-netlify/commit/42eeab89b37d548f90f62391a47c2a11ef63f8d1))
+* handle middleware redirects to default locale and same path ([#2636](https://github.com/kstarchatapp/opennextjs-netlify/issues/2636)) ([f0fa7d0](https://github.com/kstarchatapp/opennextjs-netlify/commit/f0fa7d0f6829265c04b7b1c90f24c1815c988648))
+* handle node middleware bundling when pnpm is used ([#3126](https://github.com/kstarchatapp/opennextjs-netlify/issues/3126)) ([c29381e](https://github.com/kstarchatapp/opennextjs-netlify/commit/c29381eddab51ecea734fb48d48ab13a3fdc4e9e))
+* handle non ASCII characters in cache-tag headers ([#2645](https://github.com/kstarchatapp/opennextjs-netlify/issues/2645)) ([fcf2414](https://github.com/kstarchatapp/opennextjs-netlify/commit/fcf241443cd10dac36e0466c4192bed19b853f00))
+* handle shared-cache-controls rename ([#2974](https://github.com/kstarchatapp/opennextjs-netlify/issues/2974)) ([a4a03e1](https://github.com/kstarchatapp/opennextjs-netlify/commit/a4a03e179e019cc307ca63ef0e06d0e1d58a69e9))
+* improved cdn cache hooks for dynamic 404 pages ([#2786](https://github.com/kstarchatapp/opennextjs-netlify/issues/2786)) ([b4f04e3](https://github.com/kstarchatapp/opennextjs-netlify/commit/b4f04e3c5a9c83c916f69c3e3c64e0d946ec3692))
+* incorrect output path of middleware nft for Next.js 16 ([#3211](https://github.com/kstarchatapp/opennextjs-netlify/issues/3211)) ([ff5479e](https://github.com/kstarchatapp/opennextjs-netlify/commit/ff5479e5feabac8aa1c9719440b8e6a7ded3993e))
+* make `revalidateTags` no-op when list of tags is empty ([#2727](https://github.com/kstarchatapp/opennextjs-netlify/issues/2727)) ([38e58b3](https://github.com/kstarchatapp/opennextjs-netlify/commit/38e58b3f46b78b307bcf7576a00849c41f495b52))
+* narrow down middleware i18n locale matcher to concrete locales ([#2768](https://github.com/kstarchatapp/opennextjs-netlify/issues/2768)) ([f3e24b1](https://github.com/kstarchatapp/opennextjs-netlify/commit/f3e24b1d2e4674574eef4c628d58b2d2a41e0be9))
+* narrow down mismatch content warning to non-304 responses ([#2826](https://github.com/kstarchatapp/opennextjs-netlify/issues/2826)) ([5ecd720](https://github.com/kstarchatapp/opennextjs-netlify/commit/5ecd72016d671ad0ae6084b396f2e31b349f0f15))
+* only set permament caching header when reading html file when it's not during server initialization AND when read html is Next produced fully static html ([#2935](https://github.com/kstarchatapp/opennextjs-netlify/issues/2935)) ([6a8ef66](https://github.com/kstarchatapp/opennextjs-netlify/commit/6a8ef6693e17febd1b6bb0fdc7bc32c7c2b9a5e7))
+* **perf:** exclude `/_next/static/*` from generated functions ([#3100](https://github.com/kstarchatapp/opennextjs-netlify/issues/3100)) ([5e28132](https://github.com/kstarchatapp/opennextjs-netlify/commit/5e2813227aa439fc39bad993c51329833f502ea1))
+* produce relative redirect location url for same origin ([#3129](https://github.com/kstarchatapp/opennextjs-netlify/issues/3129)) ([9f42311](https://github.com/kstarchatapp/opennextjs-netlify/commit/9f42311d1df7631558e10113f1c30d3ed99b16b0))
+* remove duplicate fetch span ([#3202](https://github.com/kstarchatapp/opennextjs-netlify/issues/3202)) ([ed475ee](https://github.com/kstarchatapp/opennextjs-netlify/commit/ed475ee63040b7f478b4a3b58800beaa12cce472))
+* remove unused OTel tracing setup ([#2874](https://github.com/kstarchatapp/opennextjs-netlify/issues/2874)) ([a220a30](https://github.com/kstarchatapp/opennextjs-netlify/commit/a220a30fa3d5ff14b6059963630825c8b3dd1005))
+* revert "fix(perf): exclude /_next/static/* from generated functions ([#3100](https://github.com/kstarchatapp/opennextjs-netlify/issues/3100))" ([8e14a76](https://github.com/kstarchatapp/opennextjs-netlify/commit/8e14a760f63fa9ef042fede7c6ab3a703ab5ac7d))
+* RSC responses when using middleware rewrites or redirects for cacheable page being served for html requests ([#2843](https://github.com/kstarchatapp/opennextjs-netlify/issues/2843)) ([9c8353b](https://github.com/kstarchatapp/opennextjs-netlify/commit/9c8353b67a6485c90c1041d149ef991dc2034bf6))
+* set immutable cache-control for _next/static ([#2767](https://github.com/kstarchatapp/opennextjs-netlify/issues/2767)) ([5bd68dd](https://github.com/kstarchatapp/opennextjs-netlify/commit/5bd68ddb13109cb838056bbfcc8eca1113b69099))
+* set user agent for purge requests ([#2730](https://github.com/kstarchatapp/opennextjs-netlify/issues/2730)) ([871f7b9](https://github.com/kstarchatapp/opennextjs-netlify/commit/871f7b9d232015d1332756ad949bdd66d95f9084))
+* support ppr shells for dynamic page routes ([#3092](https://github.com/kstarchatapp/opennextjs-netlify/issues/3092)) ([bfed78e](https://github.com/kstarchatapp/opennextjs-netlify/commit/bfed78e9b927822582340c48741ea0ed19a5a676))
+* support revalidateTag SWR in 'use cache' handler ([#3180](https://github.com/kstarchatapp/opennextjs-netlify/issues/3180)) ([a90d2e5](https://github.com/kstarchatapp/opennextjs-netlify/commit/a90d2e5228bbb77bf657929f83729945480d83e5))
+* support segment data in cache entries ([#3093](https://github.com/kstarchatapp/opennextjs-netlify/issues/3093)) ([1142752](https://github.com/kstarchatapp/opennextjs-netlify/commit/1142752b0b9327d0c4f2a28efaca83dabb397415))
+* support skipProxyUrlNormalize ([#3190](https://github.com/kstarchatapp/opennextjs-netlify/issues/3190)) ([5181234](https://github.com/kstarchatapp/opennextjs-netlify/commit/5181234f4a20a6b677a8a196f8c7a66769a234fa))
+* swap `[@opentelemetry](https://github.com/opentelemetry)` packages for `@netlify/otel` ([#3170](https://github.com/kstarchatapp/opennextjs-netlify/issues/3170)) ([0acd8a6](https://github.com/kstarchatapp/opennextjs-netlify/commit/0acd8a6d66964772c6912acfe21f30f3ce96a3a2))
+* use alternative way of gathering api functions to anaylze ([#2654](https://github.com/kstarchatapp/opennextjs-netlify/issues/2654)) ([e4916da](https://github.com/kstarchatapp/opennextjs-netlify/commit/e4916da94ec12ad47792f16e5f3098337fa33f36))
+* use uint8array for htmlrewriter wasm module instead of base64 ([25f6f30](https://github.com/kstarchatapp/opennextjs-netlify/commit/25f6f300f481483ab445cf6fb2b9d181d50d2637))
+* use uint8array for user's wasm modules used in middleware instead of base64 ([#2740](https://github.com/kstarchatapp/opennextjs-netlify/issues/2740)) ([aab8803](https://github.com/kstarchatapp/opennextjs-netlify/commit/aab8803a20b7f0894e2314e9b4ee51d63966e1d1))
+* use version of htmlrewriter which does not make use of asyncify, which looks to have a potential memory leak under high load ([#2721](https://github.com/kstarchatapp/opennextjs-netlify/issues/2721)) ([4d7ad97](https://github.com/kstarchatapp/opennextjs-netlify/commit/4d7ad97c3f16b01000989bde06352f86b5d526ba))
+
+
+### Performance Improvements
+
+* memoize blobs requests in the request scope ([#2777](https://github.com/kstarchatapp/opennextjs-netlify/issues/2777)) ([a2881bf](https://github.com/kstarchatapp/opennextjs-netlify/commit/a2881bff4d0ebac18126924ce2fadbe36832983a))
+* use conditional blob gets if same blob was fetched before for previous requests ([#3218](https://github.com/kstarchatapp/opennextjs-netlify/issues/3218)) ([2c6b3f5](https://github.com/kstarchatapp/opennextjs-netlify/commit/2c6b3f547f2f465ad10e96082cf957e49457248f))
+
 ## [5.14.5](https://github.com/opennextjs/opennextjs-netlify/compare/v5.14.4...v5.14.5) (2025-11-03)
 
 
